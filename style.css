@@ -1,0 +1,233 @@
+/* Importação de Fontes - Já está no seu HTML, mas é bom lembrar */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;700&display=swap'); */
+
+/* --- Estilos Gerais --- */
+body {
+    font-family: 'Open Sans', sans-serif; /* Fonte principal para o corpo do texto */
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6; /* Fundo suave */
+    color: #333; /* Cor de texto padrão */
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px; /* Largura máxima para o conteúdo central */
+    margin: 0 auto; /* Centraliza o container na página */
+    padding: 20px;
+}
+
+/* TODOS OS H1, H2, H3 E AGORA H4 SÃO VERDES */
+h1, h2, h3, h4 { /* Adicionado h4 aqui */
+    font-family: 'Montserrat', sans-serif; /* Fonte mais destacada para títulos */
+    color: #4CAF50; /* A cor verde aplicada aqui */
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.8em; /* Tamanho base, pode ser sobrescrito por regras mais específicas */
+}
+
+/* --- Cabeçalho (Header) --- */
+header {
+    background-color: #4CAF50; /* O fundo do cabeçalho é verde */
+    color: white; /* O texto do cabeçalho deve ser branco para contraste */
+    padding: 40px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 3.5em; /* Título principal do cabeçalho */
+    margin: 0;
+    color: white; /* Mantido branco para forte contraste com o fundo verde do cabeçalho */
+}
+
+/* --- Seções Principais (main) --- */
+main {
+    padding: 40px 0;
+}
+
+section {
+    padding: 40px 0;
+    margin-bottom: 30px;
+    background-color: #ffffff; /* Fundo branco para as seções */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Sombra suave */
+    opacity: 0; /* Inicialmente invisível para o efeito fade-in */
+    transform: translateY(20px); /* Deslocamento inicial para o efeito fade-in */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transição suave */
+}
+
+section.visible {
+    opacity: 1; /* Torna visível */
+    transform: translateY(0); /* Volta à posição original */
+}
+
+section:nth-of-type(odd) { /* Estilo alternado para seções */
+    background-color: #fcfcfc;
+}
+
+/* --- Seção de Teste de pH do Solo --- */
+.ph-solo {
+    padding: 40px 0;
+    margin-bottom: 30px;
+    background-color: #fcfcfc; /* Fundo suave para alternar com as outras seções */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* --- Título "Circuito" (ajuste específico) --- */
+/* Este é o <h1> que você adicionou fora de uma seção, com estilo inline. */
+.container h1[style] {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: #4CAF50 !important; /* Força a cor verde sobre o estilo inline */
+    font-size: 4.5em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+/* --- Cards de Conteúdo --- */
+.conteudo-card {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.card-item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    flex: 1;
+    min-width: 300px;
+    max-width: 550px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-item img,
+.card-item video {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card-texto {
+    padding: 25px;
+    flex-grow: 1;
+}
+
+/* Títulos H3 DENTRO DOS CARDS SÃO VERDES */
+.card-texto h3 {
+    margin-top: 0;
+    color: #4CAF50; /* Cor verde para os subtítulos dos cards */
+    text-align: left;
+    font-size: 2em;
+}
+
+/* Títulos H4 DENTRO DOS CARDS SÃO VERDES E MENORES */
+.card-texto h4 { /* Novo estilo para h4 */
+    margin-top: 0;
+    color: #4CAF50; /* Cor verde para os h4 */
+    text-align: left;
+    font-size: 1.5em; /* Tamanho um pouco menor que h3 */
+    margin-bottom: 10px;
+}
+
+.card-texto ul {
+    list-style: none;
+    padding: 0;
+}
+
+.card-texto ul li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.card-texto ul li::before {
+    content: '✔';
+    color: #4CAF50; /* Ícone de checkmark verde */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-weight: bold;
+}
+
+.card-item.reverse {
+    flex-direction: column;
+}
+
+/* Estilo para o card de largura total na seção de análise orçamentária */
+.full-width-card {
+    flex: 0 0 100%; /* Ocupa 100% da largura do container */
+    max-width: 100%; /* Garante que não ultrapasse */
+}
+
+/* --- Responsividade --- */
+@media (min-width: 768px) {
+    .card-item {
+        flex-direction: row;
+    }
+
+    .card-item.reverse {
+        flex-direction: row-reverse;
+    }
+
+    .card-item img,
+    .card-item video {
+        width: 50%;
+        height: auto;
+    }
+
+    .card-texto {
+        width: 50%;
+    }
+    /* Ajuste para o card de largura total em telas maiores */
+    .full-width-card {
+        flex-direction: column; /* Mantém o conteúdo empilhado mesmo em telas maiores */
+    }
+}
+
+@media (max-width: 767px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+
+    h1, h2, h3 {
+        font-size: 2em;
+    }
+
+    .card-texto h3 {
+        font-size: 1.8em;
+    }
+
+    .card-texto h4 { /* Ajuste de tamanho para h4 em telas menores */
+        font-size: 1.3em;
+    }
+
+    .container h1[style] {
+        font-size: 3.5em;
+    }
+
+    .conteudo-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-item {
+        max-width: 90%;
+    }
+}
